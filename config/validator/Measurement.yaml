@@ -1,0 +1,7 @@
+App\Entity\Measurement:
+    properties:
+        temperature:
+            - Range:
+                min: -50
+                max: 60
+                notInRangeMessage: "Temperatura musi mieścić się w zakresie od {{ min }} do {{ max }}."
