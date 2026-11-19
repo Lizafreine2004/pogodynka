@@ -15,10 +15,9 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[Route('/location')]
 final class LocationController extends AbstractController
 {
-    #[Route(name: 'app_location_index', methods: ['GET'])]
+#[Route(name: 'app_location_index', methods: ['GET'])]
     #[IsGranted('ROLE_LOCATION_INDEX')]
-    public function index(LocationRepository $locationRepository): Response
-    {
+    public function index(LocationRepository $locationRepository): Response    {
         return $this->render('location/index.html.twig', [
             'locations' => $locationRepository->findAll(),
         ]);
